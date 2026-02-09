@@ -1,0 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    notes.txt                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rbouquet <rbouquet@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/06/06 10:27:57 by rbouquet          #+#    #+#              #
+#    Updated: 2025/06/06 10:33:10 by rbouquet         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
+CPP05/ex03 : remplacer les anciens tests avec des tests avec l'intern directement
+CPP06/ex00 : faire en sorte de gerer les ascii 'a' 'b' 'c' separement des digits equivalents (67), 
+			 personnaliser les messages d'erreurs

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>POST Minecraft</title>
+	<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+	<link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+	<main class="container">
+		<h1>POST Minecraft</h1>
+		<form id="postForm" method="POST" action="/submit">
+			<label for="name">Pseudo Minecraft :</label><br>
+			<input type="text" name="name" id="name" placeholder="Ton pseudo Minecraft" required><br><br>
+			<button type="submit">Envoyer</button>
+		</form>
+		<br>
+		<div id="resultat-post"></div>
+		<a href="index.html" class="btn"><button type="button">Retour</button></a>
+	</main>
+
+	<script>
+		document.getElementById('postForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			const formData = new FormData(this);
+			const data = new URLSearchParams();
+			for (const pair of formData) {
+				data.append(pair[0], pair[1]);
+			}
+
+			fetch('/submit', {
+				method: 'POST',
+				body: data,
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			})
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('resultat-post').innerHTML = data;
+			})
+			.catch(error => {
+				console.error('Error:', error);
+				document.getElementById('resultat-post').innerHTML = 'Erreur lors de la requête';
+			});
+		});
+	</script>
+</body>
+</html>
